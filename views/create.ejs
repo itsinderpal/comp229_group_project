@@ -1,0 +1,38 @@
+<% include partials/header %>
+    <main>
+        <div class="container p-4">
+            <div class="flex flex-col bg-white shadow-lg p-4 w-100 md:w-100 lg:w-1/2">
+                <div class="text-yellow-400 form-title">
+                    <h3 class="text-2xl">CREATE BLOG</h3>
+                </div>
+
+                <form action="<%= form_action %> " method="post">
+                    <div class="row">
+                        <div class="col py-4">
+                            <label for="name">Name</label>
+                            <input type="text" value="<%= blog.name %> " name="name" id="name" placeholder="Your name" class="form-text">
+                        </div>
+                        <div class="col my-4">
+
+                            <label for="email">Email</label>
+                            <input type="email" value="<%= blog.email %> " name="email" id="email" class="form-text"
+                                placeholder="Your email address">
+                        </div>
+                        <div class="col my-4">
+                            <label for="title">Title</label>
+                            <input type="text" class="form-text" value="<%= blog.title %> " name="title" id="title" placeholder="Blog title">
+                        </div>
+                        <div class="col my-4">
+                            <label for="sub_title">Content</label>
+                            <textarea rows="6" class="form-text"  name="content" id="content"
+                                placeholder="Write here...."><%= blog.content %> </textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="bg-yellow-400 text-white px-8 py-2 rounded">Post</button>
+                    <button type="reset" class="bg-red-400 text-white px-8 py-2 rounded">Clear</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <% include partials/footer %>
